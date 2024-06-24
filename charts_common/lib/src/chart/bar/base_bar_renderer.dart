@@ -811,10 +811,10 @@ class _ReversedSeriesIterable<S extends ImmutableSeries<Object?>>
 /// order it was passed in for the grouping, but the series is flipped so that
 /// the first series of that category is on the top of the stack.
 class _ReversedSeriesIterator<S extends ImmutableSeries<Object?>>
-    extends Iterator<S> {
+    implements Iterator<S> {
   final List<S> _list;
   final _visitIndex = <int>[];
-  int? _current;
+  int _current = -1;
 
   _ReversedSeriesIterator(List<S> list) : _list = list {
     // In the order of the list, save the category and the indices of the series
@@ -833,11 +833,18 @@ class _ReversedSeriesIterator<S extends ImmutableSeries<Object?>>
 
   @override
   bool moveNext() {
-    _current = (_current == null) ? 0 : _current! + 1;
-
-    return _current! < _list.length;
+    if (_current < _visitIndex.length - 1) {
+      _current++;
+      return true;
+    }
+    return false;
   }
 
   @override
-  S get current => _list[_visitIndex[_current!]];
+  S get current {
+    if (_current < 0 || _current >= _visitIndex.length) {
+      throw StateError('No element');
+    }
+    return _list[_visitIndex[_current]];
+  }
 }
