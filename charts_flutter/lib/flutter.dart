@@ -1,3 +1,5 @@
+library charts_flutter;
+
 // Copyright 2018 the Charts project authors. Please see the AUTHORS file
 // for details.
 //
@@ -121,7 +123,6 @@ export 'package:charts_common/common.dart'
         PointRendererDecorator,
         PointRendererElement,
         PointSymbolRenderer,
-        QuantumPalette,
         RangeAnnotationAxisType,
         RangeAnnotationSegment,
         RectSymbolRenderer,
