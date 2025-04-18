@@ -33,6 +33,9 @@ class TextStyle implements common.TextStyle {
       lineHeight == other.lineHeight;
 
   @override
-  int get hashCode =>
-      hashValues(fontSize, fontFamily, color, lineHeight, fontWeight);
+  int get hashCode => (fontSize.hashCode +
+      fontFamily.hashCode +
+      color.hashCode +
+      lineHeight.hashCode +
+      fontWeight.hashCode);
 }

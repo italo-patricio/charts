@@ -275,17 +275,17 @@ class DatumLegend<D> extends ChartBehavior<D> {
 
   @override
   int get hashCode {
-    return hashValues(
-        selectionModelType,
-        contentBuilder,
-        position,
-        outsideJustification,
-        insideJustification,
-        showMeasures,
-        legendDefaultMeasure,
-        measureFormatter,
-        secondaryMeasureFormatter,
-        entryTextStyle);
+    return 
+        selectionModelType.hashCode +
+        contentBuilder.hashCode +
+        position.hashCode +
+        outsideJustification.hashCode +
+        insideJustification.hashCode +
+        showMeasures.hashCode +
+        legendDefaultMeasure.hashCode +
+        measureFormatter.hashCode +
+        secondaryMeasureFormatter.hashCode +
+        entryTextStyle.hashCode;
   }
 }
 

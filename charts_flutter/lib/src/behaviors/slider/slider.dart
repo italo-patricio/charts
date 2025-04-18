@@ -192,7 +192,12 @@ class Slider<D> extends ChartBehavior<D> {
 
   @override
   int get hashCode {
-    return hashValues(eventTrigger, handleRenderer, initialDomainValue, roleId,
-        snapToDatum, style, layoutPaintOrder);
+    return eventTrigger.hashCode +
+        handleRenderer.hashCode +
+        initialDomainValue.hashCode +
+        roleId.hashCode +
+        snapToDatum.hashCode +
+        style.hashCode +
+        layoutPaintOrder.hashCode;
   }
 }

@@ -184,19 +184,18 @@ class ChartTitle<D> extends ChartBehavior<D> {
 
   @override
   int get hashCode {
-    return hashValues(
-        behaviorPosition,
-        layoutMinSize,
-        layoutPreferredSize,
-        maxWidthStrategy,
-        title,
-        titleDirection,
-        titleOutsideJustification,
-        titleStyleSpec,
-        subTitle,
-        subTitleStyleSpec,
-        innerPadding,
-        titlePadding,
-        outerPadding);
+    return (behaviorPosition.hashCode +
+        layoutMinSize.hashCode +
+        layoutPreferredSize.hashCode +
+        maxWidthStrategy.hashCode +
+        title.hashCode +
+        titleDirection.hashCode +
+        titleOutsideJustification.hashCode +
+        titleStyleSpec.hashCode +
+        subTitle.hashCode +
+        subTitleStyleSpec.hashCode +
+        innerPadding.hashCode +
+        titlePadding.hashCode +
+        outerPadding.hashCode);
   }
 }

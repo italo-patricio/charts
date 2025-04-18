@@ -115,14 +115,12 @@ class LinePointHighlighter<D> extends ChartBehavior<D> {
 
   @override
   int get hashCode {
-    return hashValues(
-      selectionModelType,
-      defaultRadiusPx,
-      radiusPaddingPx,
-      showHorizontalFollowLine,
-      showVerticalFollowLine,
-      dashPattern,
-      drawFollowLinesAcrossChart,
-    );
+    return (selectionModelType.hashCode +
+        defaultRadiusPx.hashCode +
+        radiusPaddingPx.hashCode +
+        showHorizontalFollowLine.hashCode +
+        showVerticalFollowLine.hashCode +
+        dashPattern.hashCode +
+        drawFollowLinesAcrossChart.hashCode);
   }
 }
